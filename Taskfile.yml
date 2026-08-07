@@ -1,0 +1,32 @@
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+
+version: "3"
+
+tasks:
+  run:
+    desc: Build and run ClipIX
+    cmds:
+      - zig build run
+
+  build:
+    desc: Build ClipIX without running it
+    cmds:
+      - zig build
+
+  kill:
+    desc: Force-stop ClipIX and clean up its database file
+    cmds:
+      - powershell.exe -Command "Stop-Process -Name clipIX -Force -ErrorAction SilentlyContinue"
+      - powershell.exe -Command "Remove-Item -Path 'C:\Windows\Temp\clipix.db' -Force -ErrorAction SilentlyContinue"
+      - echo "ClipIX stopped."
+
+  end:
+    desc: Alias for kill
+    cmds:
+      - task: kill
+
+  restart:
+    desc: Kill any running instance, then rebuild and start a fresh one
+    cmds:
+      - task: kill
+      - task: run
