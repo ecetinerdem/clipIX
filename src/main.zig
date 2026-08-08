@@ -78,6 +78,12 @@ pub fn main(init: std.process.Init) !void {
     keyboard.allocator = gpa_allocator;
     keyboard.hidden_hwnd = clip_hwnd;
 
+    _ = std.process.spawn(init.io, .{
+        .argv = &.{"C:/Users/cetin/clipix-gui/gui.exe"},
+    }) catch |err| {
+        std.debug.print("Failed to launch GUI: {}\n", .{err});
+    };
+
     std.debug.print("Hook installed. Press keys to see events. Ctrl+C in this console won't stop it — close the window.\n", .{});
     var msg: win32.MSG = undefined;
 
