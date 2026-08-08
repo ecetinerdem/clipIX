@@ -21,9 +21,10 @@ Ctrl+Alt+End       -> quit ClipIX cleanly
 ## Demo
 
 
-  TODO: add the Loom/YouTube link here once recorded, e.g.:
   [🎥[ClipIX demo](https://youtu.be/YqHpJgyg0So)]
-  or simply:
+  
+  or 
+
   🎥 [Watch the demo](https://www.veed.io/view/d2090071-19e6-4830-8baa-5eb6b7e32bb4?source=editor&panel=share)
 
 *A short walkthrough video is coming soon — it will cover installing a slot
