@@ -79,6 +79,7 @@ pub fn main(init: std.process.Init) !void {
     keyboard.hidden_hwnd = clip_hwnd;
 
     _ = std.process.spawn(init.io, .{
+        // Fix this path based on your path to gui.exe
         .argv = &.{"C:/Users/cetin/clipix-gui/gui.exe"},
     }) catch |err| {
         std.debug.print("Failed to launch GUI: {}\n", .{err});
