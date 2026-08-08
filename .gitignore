@@ -1,0 +1,17 @@
+# Zig build artifacts
+.zig-cache/
+zig-out/
+
+# Runtime database (recreated fresh every launch, never meant to persist)
+clipix.db
+clipix.db-journal
+clipix.db-wal
+
+# Go GUI build output — only source (main.go, go.mod, go.sum) should be tracked
+gui/gui.exe
+gui/*.exe
+gui/*.dll
+
+# OS noise
+Thumbs.db
+Desktop.ini
